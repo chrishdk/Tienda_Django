@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def home(request):
     return render(request,'core/home.html')
+
+def hardware(request):
+    return render(request,'core/Hardware.html')

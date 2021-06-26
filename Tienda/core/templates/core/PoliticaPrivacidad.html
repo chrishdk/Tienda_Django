@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Proyecto Semestral</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="../css/Personal.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Menu PC / Desplegable celular  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <!--head-->
+        <a href="../index.html">
+          <img
+            class="logo-pag"
+            src="../img/Pag/Cosas/logo-pagina.png"
+            alt="Logo"
+          />
+        </a>
+        <b class="texto-footer">PROYECTO</b>
+        <!--head-->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#Menudesplegablecelular"
+          aria-controls="Menudesplegablecelular"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="Menudesplegablecelular">
+          <ul class="navbar-nav me-auto mb-5 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="../index.html"
+                >Inicio <span class="sr-only"></span
+              ></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="Hardware.html">Hardware</a>
+            </li>
+
+            <!--<li class="nav-item">
+              <a class="nav-link" href="Software.html">Sofware</a>
+            </li>-->
+
+            <li class="nav-item">
+              <a class="nav-link" href="Notebooks.html">Notebook</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="Contacto.html">Contacto</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="AcercaDe.html">Acerca De</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="btn btn-outline-light my-2 my-sm-0"
+                href="Registro.html"
+                style="position: absolute; right: 20px"
+                >Regístrate</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="btn btn-outline-light my-2 my-sm-0"
+                href="InicioSesion.html"
+                style="position: absolute; right: 120px"
+                >Inicia Sesión</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="../menu/Carrito.html">
+                <img
+                  class="logo-pag"
+                  src="../img/Pag/Carrito/carro_mini.png"
+                  alt="Logo"
+                  style="position: absolute; right: 250px"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contenido de la pag -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3"></div>
+
+        <div class="collapse navbar-collapse">
+          <ul id="navbar-departments" class="mr-auto navbar-nav">
+            <li class="navbar-nav nav-item">
+              <a href="#" class="nav-link nav-link">Tecnología</a>
+            </li>
+            <li class="navbar-nav nav-item">
+              <a href="#" class="nav-link nav-link">Hardware</a>
+            </li>
+            <li class="navbar-nav nav-item">
+              <a href="#" class="nav-link nav-link">Periféricos</a>
+            </li>
+            <li class="navbar-nav nav-item">
+              <a href="#" class="nav-link nav-link">Electro</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <div class="mr-2">
+              <form>
+                <div class="form-group mb-0">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="searcher"
+                      placeholder="Buscar"
+                      value=""
+                    />
+                    <div class="input-group-append">
+                      <button class="btn btn-light" type="submit">
+                        <i class="fas fa-search">&nbsp; </i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <li class="dropdown nav-item">
+              <a
+                aria-haspopup="true"
+                href="#"
+                class="
+                  navbar-icon-item navbar-user-link
+                  dropdown-toggle
+                  nav-link
+                "
+                aria-expanded="false"
+              >
+                <i class="fas fa-filter"> &nbsp;</i>
+              </a>
+              <div
+                tabindex="-1"
+                role="menu"
+                aria-hidden="true"
+                class="dropdown-menu"
+                x-placement="bottom-start"
+                style="
+                  position: absolute;
+                  will-change: transform;
+                  top: 0px;
+                  left: 0px;
+                  transform: translate3d(0px, 37px, 0px);
+                "
+                data-placement="bottom-start"
+              >
+                <button
+                  type="button"
+                  tabindex="0"
+                  role="menuitem"
+                  class="dropdown-item"
+                >
+                  <span>Tiendas&nbsp;</span>
+                </button>
+                <button tabindex="0" role="menuitem" class="dropdown-item">
+                  <div
+                    class="custom-switch custom-control custom-control-inline"
+                  >
+                    <input
+                      type="checkbox"
+                      id="hideRefurbished"
+                      name="hideRefurbishedSwitch"
+                      class="custom-control-input"
+                    />
+                    <label class="custom-control-label" for="hideRefurbished"
+                      >Ocultar reacondicionados</label
+                    >
+                  </div>
+                </button>
+              </div>
+            </li>
+            <li class="dropdown nav-item">
+              <a
+                aria-haspopup="true"
+                href="#"
+                class="
+                  navbar-icon-item navbar-user-link
+                  dropdown-toggle
+                  nav-link
+                "
+                aria-expanded="false"
+              >
+                <i class="fas fa-user">&nbsp;</i>
+              </a>
+            </li>
+            <li class="dropdown nav-item">
+              <div
+                tabindex="-1"
+                role="menu"
+                aria-hidden="true"
+                class="dropdown-menu"
+              >
+                <button
+                  type="button"
+                  tabindex="0"
+                  role="menuitem"
+                  class="dropdown-item"
+                >
+                  Chile
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="container-fluid" id="navbar-section-categories"></div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12 mt-2">
+              <h1>Política de Privacidad</h1>
+            </div>
+
+            <!--tabla-->
+            <div class="col-lg-3">
+              <div class="list-group">
+                <a href="#titular" class="list-group-item"
+                  >TITULAR Y RESPONSABLE DEL TRATAMIENTO DE LOS DATOS</a
+                >
+                <a href="#datos" class="list-group-item"
+                  >CLASES DE DATOS RECOGIDOS</a
+                >
+                <a href="#finalidad" class="list-group-item"
+                  >FINALIDAD DEL TRATAMIENTO DE LOS DATOS</a
+                >
+              </div>
+            </div>
+            <!--tabla-->
+
+            <!--texto-->
+            <div class="col-lg-9 col-md-6 mb-4">
+              <h4 id="titular">
+                TITULAR Y RESPONSABLE DEL TRATAMIENTO DE LOS DATOS
+              </h4>
+              <p class="parrafo">
+                PROYECTO Ltda - Calle Siempre Viva 1234, Las Condes, Región
+                Metropolitana, Chile.
+              </p>
+              <p class="parrafo">
+                Correo electrónico de contacto del Titular: PROYECTO@contacto.cl
+              </p>
+
+              <h4 id="datos">CLASES DE DATOS RECOGIDOS</h4>
+              <p class="parrafo">
+                Entre las clases de Datos Personales que recoge esta Aplicación,
+                ya sea directamente o a través de terceros, se encuentran:
+                nombre; apellido(s); número de teléfono; dirección de correo
+                electrónico; Cookies; Datos de uso; país; sexo; fecha de
+                nacimiento; ciudad.
+              </p>
+
+              <h4 id="finalidad">FINALIDAD DEL TRATAMIENTO DE LOS DATOS</h4>
+              <p class="parrafo">
+                Los Datos relativos al Usuario son recogidos para permitir al
+                Titular prestar su Servicio, cumplir sus obligaciones legales,
+                responder a solicitudes de ejecución, proteger sus derechos e
+                intereses (o los de sus Usuarios o terceros), detectar cualquier
+                actividad maliciosa o fraudulenta, así como para las siguientes
+                finalidades: Acceso a las cuentas de servicios de terceros,
+                Contactar con el Usuario, Interacción con redes sociales y
+                plataformas externas, Estadísticas, Remarketing y behavioral
+                targeting y Registro y autenticación.
+              </p>
+            </div>
+            <!--texto-->
+            <div class="col-12"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-dark pt-4">
+      <!-- Footer Links -->
+      <div class="container-fluid text-center text-md-left">
+        <!-- Grid row -->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-1"></div>
+          <div class="col-md-3">
+            <!-- Content -->
+            <h5 class="texto-footer">UBICACION</h5>
+            <p class="texto-footer">
+              Calle Siempre Viva 1234, Las Condes, Región Metropolitana
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="clearfix w-100 d-md-none pb-3" />
+
+          <!-- Grid column -->
+          <div class="col-md-4">
+            <div class="text-center">
+              <!-- Links -->
+              <h5 class="text-uppercase texto-footer">Servicios</h5>
+
+              <ul class="list-unstyled">
+                <li>
+                  <a href="TerminoCondiciones.html">
+                    <img src="../img/Pag/Cosas/tyc.png" />Términos y
+                    condiciones</a
+                  >
+                </li>
+                <li>
+                  <a href="PoliticaPrivacidad.html">
+                    <img src="../img/Pag/Cosas/pdp.png" />Políticas de
+                    Privacidad</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Grid column -->
+          <hr class="clearfix w-100 d-md-none pb-3" />
+
+          <!-- Grid column -->
+          <div class="col-md-3">
+            <!-- Links -->
+            <div class="text-right">
+              <h5 class="text-uppercase texto-footer">Redes Sociales</h5>
+
+              <ul class="list-unstyled">
+                <li>
+                  <a href="https://www.facebook.com/">
+                    <img src="../img/Social/facebook.png" />
+                    Facebook</a
+                  >
+                </li>
+                <li>
+                  <a href="https://twitter.com/">
+                    <img src="../img/Social/twitter.png" />
+                    Twitter</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/">
+                    <img src="../img/Social/instagram.png" />
+                    Instagram</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/">
+                    <img src="../img/Social/youtube.png" />
+                    Youtube</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3 texto-footer">
+        © 2021 Copyright: Grupo 4
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>
