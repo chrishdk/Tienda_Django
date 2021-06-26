@@ -1,0 +1,72 @@
+body {
+  padding-top: 56px;
+}
+
+.boton {
+  padding-top: 10px;
+}
+.carousel-item {
+  width: 800pxpx;
+  padding: 15px;
+}
+.font-weight-bold {
+  color: azure;
+}
+.imgCondiciones {
+  width: 600px;
+  padding-top: 5%;
+  padding-left: 10%;
+}
+.list-group {
+  width: 70%;
+}
+.list-group-item {
+  padding: 5px;
+}
+.quienessomos {
+  margin-top: 80px;
+  margin-bottom: 500px;
+}
+.cart-producto {
+
+  margin-left: 5%;
+
+}
+.leyenda {
+  margin-top: 4%;
+  margin-left: 3%;
+  margin-right: 15%;
+  border: 2px solid black;
+  margin-bottom: 3%;
+}
+.precio {
+  margin-left: 5%;
+  border: 2px solid black;
+  width: 300px;
+}
+
+.carousel-indicators .active{
+  background-color: black;
+}
+
+.texto-footer{
+  color:white;
+}
+
+.logo-pag{
+  width: 40px;
+}
+
+.list-unstyled li a{
+  color: white;
+}
+
+.parrafo{
+  text-align: justify;
+  color:black;
+}
+.separadorfooter{
+  margin-bottom: 10%;
+}
+
+
