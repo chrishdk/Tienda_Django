@@ -176,7 +176,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-3">
             <!-- Content -->
-            <h5 class="texto-footer">UBICACION</h5>
+            <h5 class="texto-footer">UBICACIÓN</h5>
             <p class="texto-footer">
               Calle Siempre Viva 1234, Las Condes, Región Metropolitana
             </p>
@@ -193,14 +193,13 @@
 
               <ul class="list-unstyled">
                 <li>
-                  <a href="TerminoCondiciones.html">
-                    <img src="../img/Pag/Cosas/tyc.png" />Términos y
-                    condiciones</a
+                  <a href="{% url 'terminocondiciones' %}">
+                    <img src="{% static 'core/img/pag/cosas/tyc.png'%}" />Términos y condiciones</a
                   >
                 </li>
                 <li>
-                  <a href="PoliticaPrivacidad.html">
-                    <img src="../img/Pag/Cosas/pdp.png" />Políticas de
+                  <a href="{% url 'politicaprivacidad' %}">
+                    <img src="{% static 'core/img/pag/cosas/pdp.png'%}" />Políticas de
                     Privacidad</a
                   >
                 </li>
@@ -210,35 +209,34 @@
 
           <!-- Grid column -->
           <hr class="clearfix w-100 d-md-none pb-3" />
-
           <!-- Grid column -->
           <div class="col-md-3">
-            <!-- Links -->
             <div class="text-right">
+              <!-- Links -->
               <h5 class="text-uppercase texto-footer">Redes Sociales</h5>
 
               <ul class="list-unstyled">
                 <li>
                   <a href="https://www.facebook.com/">
-                    <img src="../img/Social/facebook.png" />
+                    <img src="{% static 'core/img/social/facebook.png'%}" />
                     Facebook</a
                   >
                 </li>
                 <li>
                   <a href="https://twitter.com/">
-                    <img src="../img/Social/twitter.png" />
+                    <img src="{% static 'core/img/social/twitter.png'%}" />
                     Twitter</a
                   >
                 </li>
                 <li>
                   <a href="https://www.instagram.com/">
-                    <img src="../img/Social/instagram.png" />
+                    <img src="{% static 'core/img/social/instagram.png'%}" />
                     Instagram</a
                   >
                 </li>
                 <li>
                   <a href="https://www.youtube.com/">
-                    <img src="../img/Social/youtube.png" />
+                    <img src="{% static 'core/img/social/youtube.png'%}" />
                     Youtube</a
                   >
                 </li>
@@ -257,8 +255,8 @@
     </footer>
     <!-- Footer -->
 
-    <script src="../js/validador.js" type="text/javascript"></script>
-    <script src="../js/verPassword.js" type="text/javascript"></script>
+    <script src="{% static 'core/js/validador.js'%}" type="text/javascript"></script>
+    <script src="{% static 'core/js/verPassword.js'%}" type="text/javascript"></script>
     
   </body>
 </html>

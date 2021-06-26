@@ -1,6 +1,6 @@
 from django.urls import path
 from django.urls.resolvers import URLPattern
-from .views import home,hardware, notebook, contacto, acercade, iniciosesion, registro, carrito
+from .views import home,hardware, notebook, contacto, acercade, iniciosesion, registro, carrito, terminocondiciones, politicaprivacidad
 
 
 urlpatterns = [
@@ -12,4 +12,6 @@ urlpatterns = [
     path('InicioSesion', iniciosesion, name="iniciosesion"),
     path('Registro', registro, name="registro"),
     path('Carrito', carrito, name="carrito"),
+    path('TerminoCondiciones', terminocondiciones, name="terminocondiciones"),
+    path('PoliticaPrivacidad', politicaprivacidad, name="politicaprivacidad"),
 ]

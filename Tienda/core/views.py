@@ -26,3 +26,9 @@ def registro(request):
 
 def carrito(request):
     return render(request, "core/Carrito.html")
+
+def terminocondiciones(request):
+    return render(request, "core/TerminoCondiciones.html")
+
+def politicaprivacidad(request):
+    return render(request, "core/PoliticaPrivacidad.html")
