@@ -23,7 +23,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a href="home">
+        <a href="{% url 'home' %}">
           
           <img
           class="logo-pag"
@@ -46,26 +46,26 @@
         <div class="collapse navbar-collapse" id="Menudesplegablecelular">
           <ul class="navbar-nav me-auto mb-5 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}"
                 >Inicio <span class="sr-only"></span
               ></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Hardware.html">Hardware</a>
+              <a class="nav-link" href="{% url 'hardware' %}">Hardware</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Notebooks.html">Notebook</a>
+              <a class="nav-link" href="{% url 'notebook' %}">Notebook</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Contacto.html">Contacto</a>
+              <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="AcercaDe.html">Acerca De</a>
+              <a class="nav-link" href="{% url 'acercade' %}">Acerca De</a>
             </li>
             <li class="nav-item">
               <a
                 class="btn btn-outline-light my-2 my-sm-0"
-                href="menu/Registro.html"
+                href="{% url 'registro' %}"
                 style="position: absolute; right: 20px"
                 >Regístrate</a
               >
@@ -73,13 +73,13 @@
             <li class="nav-item">
               <a
                 class="btn btn-outline-light my-2 my-sm-0"
-                href="menu/InicioSesion.html"
+                href="{% url 'iniciosesion' %}"
                 style="position: absolute; right: 120px"
                 >Inicia Sesión</a
               >
             </li>
             <li class="nav-item">
-              <a href="menu/Carrito.html">
+              <a href="{% url 'carrito' %}">
                 <img
                   class="logo-pag"
                   src="{% static 'core/img/pag/Carrito/carro_mini.png'%}"
