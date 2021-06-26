@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,10 +23,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a href="index.html">
-           
+          
           <img
           class="logo-pag"
-            src="../../static/core/img/Pag/Cosas/logo-pagina.png"
+            src="{% static 'core/img/pag/cosas/logo-pagina.png'%}"
             alt="Logo"
           />
         </a>
@@ -83,7 +84,7 @@
               <a href="menu/Carrito.html">
                 <img
                   class="logo-pag"
-                  src="../../static/core/img/Pag/Carrito/carro_mini.png"
+                  src="{% static 'core/img/pag/Carrito/carro_mini.png'%}"
                   alt="Logo"
                   style="position: absolute; right: 250px"
                 />
