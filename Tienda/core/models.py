@@ -14,11 +14,11 @@ class Categoria(models.Model):
 
 #creando modelos de los productos
 
-class Productos(models.Model):
+class Producto(models.Model):
     codProducto = models.CharField(max_length=6, primary_key=True,verbose_name="Codigo producto")
     nomProducto = models.CharField(max_length=15, blank=False, null=False, verbose_name="Nombre producto")
     imagen = models.ImageField(upload_to="images/",default="sinfoto.png", null=False, blank=False, verbose_name="Imagen producto")
-    precioProducto = models.IntegerField(max_length=8, null=False,blank=False, verbose_name="Precio Producto" )
+    precioProducto = models.IntegerField(null=False,blank=False, verbose_name="Precio Producto" )
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
 
     def __str__(self):
