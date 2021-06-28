@@ -9,7 +9,8 @@ from core.forms import ProductoForm
 # Vistas de pag heredadas
 
 def home(request):
-    return render(request, "core/home.html")
+    data = {"list": Producto.objects.all().order_by('codProducto')}
+    return render(request, "core/home.html", data)
 
 def hardware(request):
     return render(request, "core/Hardware.html")
@@ -50,6 +51,11 @@ def producto_ficha(request, id):
     producto = Producto.objects.get(codProducto=id)
     data = {"Producto":  producto}
     return render(request, "core/producto_ficha.html", data)
+
+def tienda(request):
+    data = {"list": Producto.objects.all().order_by('codProducto')}
+    return render(request, "core/tienda.html", data)
+    
 
 
 # Agregar producto
