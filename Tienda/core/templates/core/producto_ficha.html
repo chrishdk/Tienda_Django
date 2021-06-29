@@ -98,7 +98,7 @@
       <div class="row">
         <div class="col-lg-3"></div>
 
-        <h2>Nombre: {{ Producto.nomProducto }}</h2>
+        <h2>{{ Producto.nomProducto }}</h2>
 
         <!--Imagen-->
         <div class="col-lg-12">
@@ -108,7 +108,7 @@
                 <a href="#"
                   ><img
                     class="card-img-top"
-                    src="/media/imagenes {{ Producto.imagen }}"
+                    src="/media/{{ Producto.imagen }}"
                     alt=""
                 /></a>
               </div>
@@ -117,7 +117,7 @@
               <ol></ol>
               <div class="card col-lg-0">
                 <p>Precio Oferta Efectivo</p>
-                <h2>Precio: {{ Producto.precioProducto }</h2>
+                <h2>$ {{ Producto.precioProducto }}</h2>
               </div>
               <ol></ol>
 
