@@ -15,7 +15,6 @@ def home(request):
 def hardware(request):
     return render(request, "core/Hardware.html")
 
-    
 def notebook(request):
     data = {"list": Producto.objects.all().order_by('codProducto')}
     return render(request, "core/Notebooks.html")
