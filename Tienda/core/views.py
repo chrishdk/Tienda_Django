@@ -17,7 +17,7 @@ def hardware(request):
 
 def notebook(request):
     data = {"list": Producto.objects.all().order_by('codProducto')}
-    return render(request, "core/Notebooks.html")
+    return render(request, "core/Notebooks.html", data)
 
 def contacto(request):
     return render(request, "core/Contacto.html")
@@ -42,20 +42,11 @@ def politicaprivacidad(request):
 
 # Vistas nuevas
 
-
-def producto_tienda(request):
-    data = {"list": Producto.objects.all().order_by('codProducto')}
-    return render(request, "core/producto_tienda.html", data)
-
 def producto_ficha(request, id):
     producto = Producto.objects.get(codProducto=id)
     data = {"Producto":  producto}
     return render(request, "core/producto_ficha.html", data)
 
-def tienda(request):
-    data = {"list": Producto.objects.all().order_by('codProducto')}
-    return render(request, "core/tienda.html", data)
-    
 # Validar Usuario
 
 def validar_persona(request):
