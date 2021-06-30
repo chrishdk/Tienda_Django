@@ -1,5 +1,12 @@
+appdirs==1.4.4
 asgiref==3.3.4
 cx-Oracle==8.2.1
+distlib==0.3.2
 Django==3.2.4
+djangorestframework==3.12.4
+filelock==3.0.12
+Pillow==8.2.0
 pytz==2021.1
+six==1.16.0
 sqlparse==0.4.1
+virtualenv==20.4.7
