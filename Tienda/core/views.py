@@ -47,6 +47,7 @@ def politicaprivacidad(request):
 def producto_tienda(request):
     data = {"list": Producto.objects.all().order_by('codProducto')}
     return render(request, "core/producto_tienda.html", data)
+
 def producto_ficha(request, id):
     producto = Producto.objects.get(codProducto=id)
     data = {"Producto":  producto}
