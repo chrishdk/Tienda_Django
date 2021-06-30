@@ -15,6 +15,19 @@
     <link rel="shortcut icon" href="{% static 'core/img/pag/cosas/logo-pagina.png'%}">
     <link rel="stylesheet" href="../../static/core/css/bootstrap.min.css"/>
     <link href="../../static/core/css/Personal.css" rel="stylesheet" />
+
+    <!-- incorporamos las jquey y validadores -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"
+    ></script>
     
   </head>
 
@@ -127,12 +140,12 @@
 
                   <!--------Ingreso Apellidos------->
                   <div class="form-group col-md-6">
-                    <label for="id_txtApellidos">Apellidos</label>
+                    <label for="id_txtApellido">Apellidos</label>
                     <input
-                      id="id_txtApellidos"
-                      name="name"
+                      id="id_txtApellido"
+                      name="txtapellido"
                       type="text"
-                      placeholder="Apellidos"
+                      placeholder="Apellido"
                       class="form-control"
                     />
                   </div>

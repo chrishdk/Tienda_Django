@@ -23,3 +23,11 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.codProducto
+
+class Usuario(models.Model):
+    cuentaUsuario = models.CharField(max_length=20, primary_key=True,verbose_name="Cuenta")
+    passUsuario = models.CharField(max_length=15, blank=False, null=False, verbose_name="Password")
+    emailUsuario = models.CharField(max_length=50, blank=False, null=False, verbose_name="email")
+    nomUsuario = models.CharField(max_length=50, blank=False, null=False, verbose_name="Nombre")
+    celUsuario = models.CharField(max_length=50, blank=False, null=False, verbose_name="Celular")
+    

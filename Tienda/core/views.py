@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
-from core.models import Categoria, Producto
-from core.forms import ProductoForm
+from core.models import Categoria, Producto, Usuario
+from core.forms import ProductoForm, ValidarUsuarioForm
 
 
 
@@ -56,7 +56,24 @@ def tienda(request):
     data = {"list": Producto.objects.all().order_by('codProducto')}
     return render(request, "core/tienda.html", data)
     
+# Validar Usuario
 
+def validar_persona(request):
+    data = {"mesg": "", "form": ValidarUsuarioForm, "persona": ""}
+
+    if request.method == "POST":
+        form = ValidarUsuarioForm(request.POST)
+        if form.is_valid:
+            try:
+                cuentaUsuario = request.POST.get('cuentaUsuario')
+                passUsuario = request.POST.get('passUsuario')
+                objeto = Usuario.objects.get(cuentaUsuario=cuentaUsuario, passUsuario=passUsuario)
+                data["mesg"] = "¡La cuenta y el rut son correctos!"
+                data["persona"] = Usuario.objects.get(cuentaUsuario=cuentaUsuario)
+                return render(request, "core/home.html", data)
+            except:
+                data["mesg"] = "¡La cuenta o el rut no son correctos!"
+    return render(request, "core/ValidarPersona.html", data)
 
 # Agregar producto
 

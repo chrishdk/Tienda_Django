@@ -6,9 +6,14 @@ $("#formulario1").validate({
       required: true,
       minlength: 2,
     },
+    txtapellido: {
+      required: true,
+      minlength: 2,
+    },
     txtnombreusuario: {
       required: true,
       minlength: 4,
+      maxlength: 20,
     },
     txtEmail: {
       required: true,
@@ -17,6 +22,7 @@ $("#formulario1").validate({
     txtContrasena: {
       required: true,
       minlength: 5,
+      maxlength: 15,
     },
     txtRepetirContrasena: {
       required: true,
@@ -26,6 +32,10 @@ $("#formulario1").validate({
   messages: {
     txtnombre: {
       required: "Ingrese nombre",
+      minlength: "No cumple formato",
+    },
+    txtapellido: {
+      required: "Ingrese Apellido",
       minlength: "No cumple formato",
     },
     txtnombreusuario: {
