@@ -180,7 +180,8 @@
 
           <!-- Fin carrusel -->
 
-          {% if categoria="2" in list %}
+          <!---------------------Producto------------------>
+          {% if list %}
           <div class="row">
             {% for po in list %}
             <div class="col-lg-4 col-md-6 mb-4">
@@ -214,9 +215,69 @@
                   <small class="text-muted">
                     &#9733; &#9733; &#9733; &#9733; &#9734;
                   </small>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="btnBuscar"
+                    style="font-size: 8pt; font-family: Verdana; float: right"
+                  >
+                    Comparar Precios
+                  </button>
                 </div>
               </div>
             </div>
+
+            <script>
+              document
+                .querySelector("#btnBuscar")
+                .addEventListener("click", function () {
+                  var txtProducto =
+                    document.getElementById("nombre_producto").innerHTML;
+                  console.log(txtProducto);
+                  obtener_registro1(txtProducto);
+                });
+              function obtener_registro1(str) {
+                let url =
+                  "https://publicapi.solotodo.com/products/browse/?search=" +
+                  str;
+
+                const api = new XMLHttpRequest();
+
+                api.onreadystatechange = function () {
+                  if (this.readyState == 4 && this.status == 200) {
+                    let datos = JSON.parse(this.responseText);
+
+                    // ID Producto
+                    var id = datos.results[0].product.id;
+                    console.log(datos.results[0].product.id);
+                    let url1 =
+                      "https://publicapi.solotodo.com/products/available_entities/?ids=" +
+                      id +
+                      "&stores=1085&stores=30&stores=3&stores=279&stores=1119&stores=128&stores=920&stores=138&stores=1712&stores=4&stores=722&stores=788&stores=285&stores=201&stores=398&stores=397&stores=755&stores=31&stores=61&stores=193&stores=7&stores=1052&stores=255&stores=656&stores=16&stores=426&stores=261&stores=88&stores=1481&stores=1580&stores=291&stores=283&stores=1382&stores=172&stores=38&stores=723&stores=559&stores=9&stores=326&stores=822&stores=1349&stores=289&stores=689&stores=1679&stores=427&stores=1217&stores=21&stores=1448&stores=286&stores=1811&stores=284&stores=232&stores=87&stores=27&stores=281&stores=263&stores=56&stores=1283&stores=256&stores=954&stores=197&stores=292&stores=5&stores=524&stores=199&stores=43&stores=76&stores=228&stores=294&stores=174&stores=23&stores=290&stores=392&stores=887&stores=260&stores=195&stores=225&stores=262&stores=115&stores=1646&stores=265&stores=287&stores=37&stores=118&stores=39&stores=921&stores=116&stores=1250&stores=257&stores=266&stores=986&stores=1713&stores=11&stores=278&stores=34&stores=12&stores=854&stores=198&stores=1547&stores=1251&stores=1118&stores=267&stores=953&stores=28&stores=186&stores=68&stores=106&stores=18&stores=223&stores=194&stores=1316&stores=1019&stores=282&stores=956&stores=293&stores=1779&stores=623&stores=67&stores=1415&stores=47&stores=425&stores=86&stores=183&stores=22&stores=1514&stores=955&stores=1086&stores=1745&stores=227&stores=176&stores=181&stores=167&stores=173&stores=264&stores=1449&stores=35&stores=170&stores=6&stores=280&stores=789&stores=359&stores=558&stores=114&stores=44&stores=1647&stores=821&stores=63&stores=1778&stores=495&stores=14&stores=239&stores=45&stores=1613&stores=85&stores=1151&stores=91&exclude_refurbished=undefined";
+                    console.log(url1);
+                    api.open("GET", url1, true);
+                    api.send();
+                    api.onreadystatechange = function () {
+                      if (this.readyState == 4 && this.status == 200) {
+                        let datos1 = JSON.parse(this.responseText);
+                        // Precio Producto
+                        var price =
+                          "Solotodo: $" +
+                          datos1.results[0].entities[0].active_registry.offer_price.split(
+                            "."
+                          )[0];
+                        console.log(price);
+                        document.getElementById("price_product").innerHTML =
+                          price;
+                      }
+                    };
+                  }
+                };
+                api.open("GET", url, true);
+                api.send();
+              }
+            </script>
+
           {% endfor %}
           </div>
           {% endif %}

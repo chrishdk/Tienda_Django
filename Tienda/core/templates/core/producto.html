@@ -43,6 +43,7 @@
                     <th>Nombre</th>
                     <th>Imagen</th>
                     <th>Precio</th>
+                    <th>Precio Credito</th>
                     <th>categoría</th>
                     <th class="titulo_boton">Editar</th>
                     <th class="titulo_boton">Eliminar</th>
@@ -56,6 +57,7 @@
                     
                     <td><img src="/media/{{ po.imagen }}" class="mini_auto" alt=""></td>
                     <td>{{ po.precioProducto }}</td>
+                    <td>{{ po.precioProductoCred }}</td>
                     <td>{{ po.categoria }}</td>
                     <td><a href="{% url 'producto' 'upd' po.codProducto %}" 
                         class="btn btn-primary btn-sm boton_chico">Editar</a></td>

@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
-from core.models import Categoria, Producto, Usuario
-from core.forms import ProductoForm, ValidarUsuarioForm
+from core.models import Categoria, Usuario,  Producto
+from core.forms import  ValidarUsuarioForm , ProductoForm
 
 
 
@@ -47,7 +47,6 @@ def politicaprivacidad(request):
 def producto_tienda(request):
     data = {"list": Producto.objects.all().order_by('codProducto')}
     return render(request, "core/producto_tienda.html", data)
-
 def producto_ficha(request, id):
     producto = Producto.objects.get(codProducto=id)
     data = {"Producto":  producto}
@@ -117,14 +116,15 @@ def producto(request, action, id):
 
 def poblar_bd(request):
     Producto.objects.all().delete()
-    Producto.objects.create(codProducto="1", nomProducto='HP Omen 15-EN0002LA [10G91LA]', imagen="images/Notebook/001/001.png", precioProducto="1099990", categoria=Categoria.objects.get(idCategoria=2))
-    Producto.objects.create(codProducto="2", nomProducto='ASUS TUF Gaming F15', imagen="images/Notebook/002/002.png", precioProducto="869990", categoria=Categoria.objects.get(idCategoria=2))
-    Producto.objects.create(codProducto="3", nomProducto='ASUS Chromebook C423NA-WB04', imagen="images/Notebook/003/003.png", precioProducto="209990", categoria=Categoria.objects.get(idCategoria=2))
-    Producto.objects.create(codProducto="4", nomProducto='ASUS Chromebook C423NA-WB04', imagen="images/Notebook/004/004.png", precioProducto="209990", categoria=Categoria.objects.get(idCategoria=2))
+    Producto.objects.create(codProducto="1", nomProducto='HP Omen 15-EN0002LA',         imagen="images/Notebook/001/001.png",      precioProducto="1099990", precioProductoCred="1249990",    categoria=Categoria.objects.get(idCategoria=2))
+    Producto.objects.create(codProducto="2", nomProducto='Saleen',        imagen="images/Sin título.jpg",      precioProducto="100000",    categoria=Categoria.objects.get(idCategoria=2))
+    Producto.objects.create(codProducto="3", nomProducto='Shelby',        imagen="images/Sin título.jpg",      precioProducto="100000",    categoria=Categoria.objects.get(idCategoria=2))
+    Producto.objects.create(codProducto="4", nomProducto='Mercedes-Benz', imagen="images/Sin título.jpg",      precioProducto="100000",    categoria=Categoria.objects.get(idCategoria=2))
+    
     Producto.objects.create(codProducto="5", nomProducto='Ford',          imagen="images/Sin título.jpg",      precioProducto="100000",    categoria=Categoria.objects.get(idCategoria=2))
     Producto.objects.create(codProducto="6", nomProducto='Ford',          imagen="images/Sin título.jpg",      precioProducto="100000",    categoria=Categoria.objects.get(idCategoria=2))
     Producto.objects.create(codProducto="7", nomProducto='Rolls-Royce',   imagen="images/Sin título.jpg",      precioProducto="100000",    categoria=Categoria.objects.get(idCategoria=2))
     Producto.objects.create(codProducto="8", nomProducto='Mustang',       imagen="images/Sin título.jpg",      precioProducto="100000",    categoria=Categoria.objects.get(idCategoria=2))
-    Producto.objects.create(codProducto="9", nomProducto='Procesador Intel Core i7-11700F, 8N/16H, 2,5Ghz/4.9Ghz, Sin gráficos', imagen="images/Componentes/Procesador/001.png", precioProducto="319900", categoria=Categoria.objects.get(idCategoria=1))
-    Producto.objects.create(codProducto="10", nomProducto='G.Skill Trident Z RGB F4-2400C15S-8GTZR (1 x 8GB | DIMM DDR4-2400)', imagen="images/Componentes/Ram/001.png", precioProducto="59990", categoria=Categoria.objects.get(idCategoria=1))
+    Producto.objects.create(codProducto="9", nomProducto='Mercedes-Benz', imagen="images/Sin título.jpg",      precioProducto="100000",    categoria=Categoria.objects.get(idCategoria=1))
+    Producto.objects.create(codProducto="10", nomProducto='Silver Plus',   imagen="images/Sin título.jpg",      precioProducto="100000",    categoria=Categoria.objects.get(idCategoria=1))
     return redirect(producto, action='ins', id = '-1')
