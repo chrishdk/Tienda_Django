@@ -68,13 +68,29 @@ def validar_persona(request):
                 cuentaUsuario = request.POST.get('cuentaUsuario')
                 passUsuario = request.POST.get('passUsuario')
                 objeto = Usuario.objects.get(cuentaUsuario=cuentaUsuario, passUsuario=passUsuario)
-                data["mesg"] = "¡La cuenta y el rut son correctos!"
+                data["mesg"] = "¡La cuenta y la password son correctos!"
                 data["persona"] = Usuario.objects.get(cuentaUsuario=cuentaUsuario)
                 return render(request, "core/home.html", data)
             except:
-                data["mesg"] = "¡La cuenta o el rut no son correctos!"
+                data["mesg"] = "¡La cuenta o la password no son correctos!"
     return render(request, "core/ValidarPersona.html", data)
 
+def iniciar_sesion(request):
+    data = {"mesg": "", "form": ValidarUsuarioForm, "persona": ""}
+
+    if request.method == "POST":
+        form = ValidarUsuarioForm(request.POST)
+        if form.is_valid:
+            try:
+                cuentaUsuario = request.POST.get('cuentaUsuario')
+                passUsuario = request.POST.get('passUsuario')
+                objeto = Usuario.objects.get(cuentaUsuario=cuentaUsuario, passUsuario=passUsuario)
+                data["mesg"] = "¡La cuenta y la password son correctos!"
+                data["persona"] = Usuario.objects.get(cuentaUsuario=cuentaUsuario)
+                return render(request, "core/home.html", data)
+            except:
+                data["mesg"] = "¡La cuenta o la password no son correctos!"
+    return render(request, "core/ValidarPersona.html", data)
 # Agregar producto
 
 def producto(request, action, id):

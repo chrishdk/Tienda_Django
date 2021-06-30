@@ -105,13 +105,10 @@
       <div class="row">
         <div class="col-md-12">
           <div class="well well-sm">
-            <form id="iniciosesion" method="POST">
-              <fieldset>
-                <legend class="text-center header"></legend>
-
+            <form id="iniciosesion" method="POST" enctype="multipart/form-data" action="">
                 <div class="form-group">
                   <span class="col-md-1 col-md-offset-2 text-center"></span>
-                  <div class="col-md-8">
+                  <div class="col-md-8 text-center">
                     <input
                       id="id_user"
                       name="txtusuario"
@@ -120,9 +117,7 @@
                       class="form-control"
                     />
                   </div>
-                </div>
-
-                <div class="form-group">
+                  <br>
                   <span class="col-md-1 col-md-offset-2 text-center"></span>
                   <div class="col-md-8">
                     <input
@@ -133,17 +128,19 @@
                       class="form-control"
                     />
                   </div>
+                  <br>
+                  <div class="col-md-8">
+                    {% if mesg %}
+                    <div id="form_message" class="alert alert-danger" role="alert">{{ mesg }}</div>
+                    {% endif %}
+                  </div>
                 </div>
 
                 <div class="from-check">
                   <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">
-                      Iniciar Sesión
-                    </button>
+                    <input type="submit" class="btn btn-primary" value="Iniciar Sesión">
                   </div>
                 </div>
-              </fieldset>
-
               <div class="form-group">
                 <div class="col-md-12 text-center"></div>
 
