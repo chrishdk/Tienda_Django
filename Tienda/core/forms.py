@@ -5,7 +5,7 @@ from .models import Producto, Usuario
 class ProductoForm(ModelForm):
     class Meta:
         model = Producto
-        fields = ['codProducto', 'nomProducto', 'imagen', 'precioProducto', 'categoria']
+        fields = ['codProducto', 'nomProducto', 'imagen', 'precioProducto','precioProductoCred', 'categoria']
 
 class ValidarUsuarioForm(ModelForm):
     class Meta:

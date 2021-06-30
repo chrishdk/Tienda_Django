@@ -16,7 +16,7 @@ class Categoria(models.Model):
 
 class Producto(models.Model):
     codProducto = models.CharField(max_length=6, primary_key=True,verbose_name="Codigo producto")
-    nomProducto = models.CharField(max_length=30, blank=False, null=False, verbose_name="Nombre producto")
+    nomProducto = models.CharField(max_length=50, blank=False, null=False, verbose_name="Nombre producto")
     imagen = models.ImageField(upload_to="images/",default="sinfoto.png", null=False, blank=False, verbose_name="Imagen producto")
     imagen2 = models.ImageField(upload_to="images/",default="sinfoto.png", null=True, blank=False, verbose_name="Imagen producto2")
     precioProducto = models.IntegerField(null=False,blank=False, verbose_name="Precio Producto" )
