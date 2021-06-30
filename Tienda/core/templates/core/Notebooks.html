@@ -178,181 +178,48 @@
             </a>
           </div>
 
+          <!-- Fin carrusel -->
+
+          {% if categoria="2" in list %}
           <div class="row">
+            {% for po in list %}
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="../products/view/Notebook002.html"
-                  ><img
+                <a href="{% url 'producto_ficha' po.codProducto %}">
+                  <img
                     class="card-img-top"
-                    src="../img/Notebook/002/002.png"
+                    src="/media/{{ po.imagen }}"
                     alt=""
-                /></a>
+                  />
+                </a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="../products/view/Notebook002.html"
-                      >ASUS TUF Gaming F15</a
+                    <a
+                      id="nombre_producto"
+                      href="{% url 'producto_ficha' po.codProducto %}"
+                      >{{ po.nomProducto }}</a
                     >
                   </h4>
-                  <br />
-                  <h5>$ 869.990</h5>
-                  <br />
-                  <p class="card-text">
-                    Obtén el mejor equipo, comprando el Notebook Asus Tuf Gaming
-                    F15 / Fortress Gray / Amd Rayzen 7 / 8 Gb Ram / Nvidia
-                    Geforce gtx 1650 ti / 512 Gb / 15.6". Modelo de tamaño y
-                    capacidad perfecta para llevar tus archivos y programas a
-                    todas partes.
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted"
-                    >&#9733; &#9733; &#9733; &#9733; &#9734;</small
-                  >
-                </div>
-              </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="../products/view/Notebook004.html"
-                  ><img
-                    class="card-img-top"
-                    src="../img/Notebook/004/004.png"
-                    alt=""
-                /></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="../products/view/Notebook004.html"
-                      >ASUS Chromebook C423NA-WB04</a
-                    >
-                  </h4>
                   <br />
-                  <h5>$ 209.990</h5>
+                  <h5>$ {{ po.precioProducto }}</h5>
+                  <p id="price_product"></p>
                   <br />
                   <p class="card-text">
-                    Intel Celeron N3350 <br />Memoria RAM: 4 GB<br />Disco Duro:
-                    64 GB <br />Sistema operativo: Chrome OS <br />Pantalla: '14
-                    (1366x768)
+                    {{po.descProducto}}
                   </p>
                 </div>
-                <div class="card-footer">
-                  <small class="text-muted"
-                    >&#9733; &#9733; &#9733; &#9733; &#9734;</small
-                  >
-                </div>
-              </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="../products/view/Notebook001.html"
-                  ><img
-                    class="card-img-top"
-                    src="../img/Notebook/001/001.png"
-                    alt=""
-                /></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="../products/view/Notebook001.html"
-                      >HP Omen 15-EN0002LA</a
-                    >
-                  </h4>
-                  <br />
-                  <h5>$ 1.099.990</h5>
-                  <br />
-                  <p class="card-text">
-                    Sé la envidia del juego con la nueva notebook OMEN 15. Con
-                    su extraordinario diseño compacto y profesionalizado,
-                    poderoso procesador AMD Ryzen H más gráficos NVIDIA y OMEN
-                    Command Center para optimizar todos los recursos que
-                    necesitas.
-                  </p>
-                </div>
                 <div class="card-footer">
-                  <small class="text-muted"
-                    >&#9733; &#9733; &#9733; &#9733; &#9734;</small
-                  >
+                  <small class="text-muted">
+                    &#9733; &#9733; &#9733; &#9733; &#9734;
+                  </small>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"
-                  ><img
-                    class="card-img-top"
-                    src="http://placehold.it/700x400"
-                    alt=""
-                /></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Four</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Amet numquam aspernatur!
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted"
-                    >&#9733; &#9733; &#9733; &#9733; &#9734;</small
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"
-                  ><img
-                    class="card-img-top"
-                    src="http://placehold.it/700x400"
-                    alt=""
-                /></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Five</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Amet numquam aspernatur! Lorem ipsum dolor sit amet.
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted"
-                    >&#9733; &#9733; &#9733; &#9733; &#9734;</small
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"
-                  ><img
-                    class="card-img-top"
-                    src="http://placehold.it/700x400"
-                    alt=""
-                /></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Six</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Amet numquam aspernatur!
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted"
-                    >&#9733; &#9733; &#9733; &#9733; &#9734;</small
-                  >
-                </div>
-              </div>
-            </div>
+          {% endfor %}
           </div>
+          {% endif %}
           <!-- /.row -->
         </div>
         <!-- /.col-lg-9 -->
