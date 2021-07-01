@@ -50,13 +50,12 @@
                 >Inicio <span class="sr-only"></span
               ></a>
             </li>
-<!--            <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="{% url 'hardware' %}">Hardware</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'notebook' %}">Notebook</a>
             </li>
-          -->
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
             </li>
@@ -182,104 +181,46 @@
             </a>
           </div>
 
+          <!-- Fin carrusel -->
+
+          <!---------------------Producto------------------>
+          {% if list %}
           <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="../products/view/TarjetaVideo001.html"
-                  ><img
-                    class="card-img-top"
-                    src="../img/Componentes/Video/001/001.png"
-                    alt=""
-                /></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="../products/view/TarjetaVideo001.html"
-                      >MSI GeForce GTX 1660 GAMING X 6G</a
-                    >
-                  </h4>
-                  <br />
-                  <h5>$ 289.990</h5>
-                  <br />
-                  <p class="card-text">
-                    Prepárate para jugar los últimos juegos con GeForce GTX 1660
-                    Ti, con un desempeño que rivaliza a las GeForce GTX 1070.
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted"
-                    >&#9733; &#9733; &#9733; &#9733; &#9734;</small
-                  >
-                </div>
-              </div>
-            </div>
+            {% for po in list %}
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                  <a href="{% url 'producto_ficha' po.codProducto %}">
+                    <img
+                      class="card-img-top"
+                      src="/media/{{ po.imagen }}"
+                      alt=""
+                    />
+                  </a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a
+                        id="nombre_producto"
+                        href="{% url 'producto_ficha' po.codProducto %}"
+                        >{{ po.nomProducto }}</a
+                      >
+                    </h4>
+                    <br />
+                    <h5>$ {{ po.precioProducto }}</h5>
+                    <p id="price_product"></p>
+                    <br />
+                    <p class="card-text">{{po.descProducto}}</p>
+                  </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="../products/view/Ram001.html"
-                  ><img
-                    class="card-img-top"
-                    src="../img/Componentes/Ram/001/001.png"
-                    alt=""
-                /></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="../products/view/Ram001.html"
-                      >G.Skill Trident Z RGB F4-2400C15D-16GTZR</a
-                    >
-                  </h4>
-                  <br />
-                  <h5>$59.990</h5>
-                  <br />
-                  <p class="card-text">
-                    Revela tus colores interiores<br />
-                    ¡Crea una PC única con el kit de memoria Trident Z RGB! Lo
-                    mejor de tener capacidades RGB es la facultad de elegir los
-                    colores que desee. Ya sea blanco en un día o verde en el
-                    siguiente, puede estar seguro de que estos módulos se verán
-                    actuales y modernos en cualquier compilación.
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted"
-                    >&#9733; &#9733; &#9733; &#9733; &#9734;</small
-                  >
+                  <div class="card-footer">
+                    <small class="text-muted">
+                    &#9733; &#9733; &#9733; &#9733; &#9734;
+                    </small>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="../products/view/Cpu001.html"
-                  ><img
-                    class="card-img-top"
-                    src="../img/Componentes/Procesador/001/001.png"
-                    alt=""
-                /></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="../products/view/Cpu001.html"
-                      >Procesador Intel Core i7-11700F, 8N/16H, 2,5Ghz/4.9Ghz,
-                      Sin gráficos</a
-                    >
-                  </h4>
-                  <br />
-                  <h5>$ 319.900</h5>
-                  <br />
-                  <p class="card-text">
-                    Aumente su productividad, juegos y experiencias de creación
-                    de contenido instalando el procesador Intel Core i7-11700F
-                    de ocho núcleos LGA 1200 a 2.5 GHz en su sistema
-                    informático. .
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted"
-                    >&#9733; &#9733; &#9733; &#9733; &#9734;</small
-                  >
-                </div>
-              </div>
-            </div>
+            {% endfor %}
           </div>
+          {% endif %}
           <!-- /.row -->
         </div>
         <!-- /.col-lg-9 -->

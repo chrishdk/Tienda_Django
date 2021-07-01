@@ -54,13 +54,12 @@
                 >Inicio <span class="sr-only"></span
               ></a>
             </li>
-            <!--            <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="{% url 'hardware' %}">Hardware</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'notebook' %}">Notebook</a>
             </li>
-          -->
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
             </li>
@@ -189,38 +188,37 @@
           {% if list %}
           <div class="row">
             {% for po in list %}
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="{% url 'producto_ficha' po.codProducto %}">
-                  <img
-                    class="card-img-top"
-                    src="/media/{{ po.imagen }}"
-                    alt=""
-                  />
-                </a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a
-                      id="nombre_producto"
-                      href="{% url 'producto_ficha' po.codProducto %}"
-                      >{{ po.nomProducto }}</a
-                    >
-                  </h4>
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                  <a href="{% url 'producto_ficha' po.codProducto %}">
+                    <img
+                      class="card-img-top"
+                      src="/media/{{ po.imagen }}"
+                      alt=""
+                    />
+                  </a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a
+                        id="nombre_producto"
+                        href="{% url 'producto_ficha' po.codProducto %}"
+                        >{{ po.nomProducto }}</a
+                      >
+                    </h4>
+                    <br />
+                    <h5>$ {{ po.precioProducto }}</h5>
+                    <p id="price_product"></p>
+                    <br />
+                    <p class="card-text">{{po.descProducto}}</p>
+                  </div>
 
-                  <br />
-                  <h5>$ {{ po.precioProducto }}</h5>
-                  <p id="price_product"></p>
-                  <br />
-                  <p class="card-text">{{po.descProducto}}</p>
-                </div>
-
-                <div class="card-footer">
-                  <small class="text-muted">
+                  <div class="card-footer">
+                    <small class="text-muted">
                     &#9733; &#9733; &#9733; &#9733; &#9734;
-                  </small>
+                    </small>
+                  </div>
                 </div>
               </div>
-            </div>
             {% endfor %}
           </div>
           {% endif %}

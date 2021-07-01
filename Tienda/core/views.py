@@ -13,10 +13,11 @@ def home(request):
     return render(request, "core/home.html", data)
 
 def hardware(request):
-    return render(request, "core/Hardware.html")
+    data = {"list": Producto.objects.filter(categoria="1").order_by('codProducto')}
+    return render(request, "core/Hardware.html", data)
 
 def notebook(request):
-    data = {"list": Producto.objects.all().order_by('codProducto')}
+    data = {"list": Producto.objects.filter(categoria="2").order_by('codProducto')}
     return render(request, "core/Notebooks.html", data)
 
 def contacto(request):
