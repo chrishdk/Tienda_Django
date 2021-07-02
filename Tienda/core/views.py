@@ -133,7 +133,7 @@ def poblar_bd(request):
                             nomProducto='ASUS Chromebook C423NA-WB04',
                             imagen="images/Notebook/003/003.png",
                             precioProducto="209990", precioProductoCred="209990",
-                            descFich="Intel Celeron N3350 / Memoria RAM: 4 GB / Disco Duro: 64 GB / Sistema operativo: Chrome OS / Pantalla: '14 (1366x768)"  ,
+                            descFich="Asus chromebook C423NA-WB04 / Intel Celeron N3350 / Memoria RAM: 4 GB / Disco Duro: 64 GB / Sistema operativo: Chrome OS / Pantalla: '14 (1366x768)"  ,
                             descFichCom="lala",
                             categoria=Categoria.objects.get(idCategoria=2))
 #producto 4
@@ -142,7 +142,7 @@ def poblar_bd(request):
                             imagen="images/Procesador/001/001.png",
                             precioProducto="319900",
                             precioProductoCred="319900",
-                            descFich="Aumente su productividad, juegos y experiencias de creación de contenido instalando el procesador Intel Core i7-11700F de ocho núcleos LGA 1200 a 2.5 GHz en su sistema informático."  ,
+                            descFich="Intel core i7 de 11ma Generación / 8 núcleos / Frecuencia del procesador 2,5 GHz / 64 bits"  ,
                             descFichCom="lala",
                             categoria=Categoria.objects.get(idCategoria=1))
     #producto 5
@@ -152,7 +152,7 @@ def poblar_bd(request):
                             imagen2="images/ram/001/001c.png",
                             precioProducto="59990"  ,
                             precioProductoCred="59990",
-                            descFich="Revela tus colores interiores \n ¡Crea una PC única con el kit de memoria Trident Z RGB! Lo mejor de tener capacidades RGB es la facultad de elegir los colores que desee. Ya sea blanco en un día o verde en el siguiente, puede estar seguro de que estos módulos se verán actuales y modernos en cualquier compilación."  ,
+                            descFich="GSkill Trident Z / Memoria interna 8 GB / Velocidad de memoria 2400 MHz / Retroiluminación RGB"  ,
                             descFichCom="lala",
                             categoria=Categoria.objects.get(idCategoria=1))
     #producto 6
@@ -160,8 +160,7 @@ def poblar_bd(request):
                             nomProducto='MSI GeForce GTX 1660 GAMING X 6G',
                             imagen="images/Video/001/001.png",
                             precioProducto="289990", precioProductoCred="289990",
-                            descFich="Prepárate para jugar los últimos juegos con GeForce GTX 1660 Ti, con un desempeño que rivaliza a las GeForce GTX 1070."  ,
+                            descFich="NVIDIA GTX 1660 / Resolución 7680 x 4320 pixeles / Capacidad gráfica 6 GB / Ancho de datos 192 bits / interfaz PCI Express x16 3.0"  ,
                             descFichCom="lala",
                             categoria=Categoria.objects.get(idCategoria=1))
-    
     return redirect(producto, action='ins', id = '-1')
