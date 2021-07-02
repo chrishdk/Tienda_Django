@@ -31,7 +31,7 @@ class producto_update(APIView):
 @api_view(['GET'])
 def producto_read(request, id):
     if request.method == 'GET':
-        objeto = get_object_or_404(Producto, patente=id)
+        objeto = get_object_or_404(Producto, codProducto=id)
         serializer = ProductoSerializer(objeto)
         return Response(serializer.data)
 
@@ -46,7 +46,7 @@ def producto_read_all(request):
 def producto_delete(request, id):
     if request.method == 'DELETE':
         try:
-            Producto.objects.get(patente=id).delete()
+            Producto.objects.get(codProducto=id).delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Producto.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
