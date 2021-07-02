@@ -108,7 +108,18 @@ def producto(request, action, id):
 
 def poblar_bd(request):
     Producto.objects.all().delete()
-    Producto.objects.create(codProducto="1", nomProducto='HP Omen 15-EN0002LA',         imagen="images/Notebook/001/001.png",      precioProducto="1099990", precioProductoCred="1249990",                         descFich="lala"  ,descFichCom="lala",                  categoria=Categoria.objects.get(idCategoria=2))
+
+#producto 1 
+    Producto.objects.create(codProducto="1",
+                            nomProducto='HP Omen 15-EN0002LA',
+                            imagen="images/Notebook/001/001.png",
+                            precioProducto="1099990",
+                            precioProductoCred="1249990",
+                            descFich="lala"  ,
+                            descFichCom="lala",
+                            categoria=Categoria.objects.get(idCategoria=2))
+
+
     Producto.objects.create(codProducto="2", nomProducto='ASUS TUF Gaming F15',        imagen="images/Notebook/002/002.png",      precioProducto="869990"  , precioProductoCred="899990",                          descFich="lala"  ,descFichCom="lala",                  categoria=Categoria.objects.get(idCategoria=2))
     Producto.objects.create(codProducto="3", nomProducto='ASUS Chromebook C423NA-WB04',         imagen="images/Notebook/003/003.png",      precioProducto="209990", precioProductoCred="209990",                   descFich="lala"  ,descFichCom="lala",                 categoria=Categoria.objects.get(idCategoria=2))
     Producto.objects.create(codProducto="4", nomProducto='Intel Core i7-11700F',         imagen="images/Procesador/001/001.png",      precioProducto="319900", precioProductoCred="319900",                        descFich="lala"  ,descFichCom="lala",                  categoria=Categoria.objects.get(idCategoria=1))
