@@ -116,7 +116,7 @@ def poblar_bd(request):
                             precioProducto="1099990",
                             precioProductoCred="1249990",
                             descFich="AMD Ryzen 7 4800H / RAM 16 GB DDR4 / Pantalla LED 15.6'' / NVIDIA GeForce RTX 2060 /"  ,
-                            descFichCom="lala",
+                            descFichCom="HP Omen 15-EN0002LA   /   Procesador AMD Ryzen 7 4800H (8 núcleos / 16 hilos / 2900 MHz - 4200 MHz)   /   RAM 16 GB DDR4 (3200 MHz)   /   Pantalla LED 15.6' (1920x1080) / 60 Hz   /   Batería 6 celdas (70900 mWh)   /   AlmacenamientoSSD 512GB   /   NVIDIA GeForce RTX 2060 (6 GB)   /   Dimensiones 358 x 240 x 23 mm   /   Sistema Operativo Microsoft Windows 10 Home",
                             categoria=Categoria.objects.get(idCategoria=2))
 
 #producto 2
@@ -126,7 +126,7 @@ def poblar_bd(request):
                             precioProducto="869990"  , 
                             precioProductoCred="899990",                         
                             descFich="Notebook Asus Tuf Gaming F15 / Fortress Gray / Amd Rayzen 7 / 8 Gb Ram / Nvidia Geforce gtx 1650 ti / 512 Gb / Pantalla '15.6 " ,
-                            descFichCom="lala",                  
+                            descFichCom="Procesador AMD Ryzen 7 4800H (8 núcleos / 16 hilos / 2900 MHz - 4200 MHz)   /  RAM 8 GB DDR4 (2933 MHz)   /   Pantalla LED 15.6' (1920x1080) / 144 Hz   /   Batería 3 celdas (48000 mWh)   /   Almacenamiento SSD 512GB   /   Tarjetas de video AMD Radeon RX Vega 7 (Integrada) NVIDIA GeForce GTX 1650 Ti (4 GB) Puertos   /   Dimensiones 359 x 256 x 25 mm   /Sistema Operativo Microsoft Windows 10 Home",                  
                             categoria=Categoria.objects.get(idCategoria=2))
 #producto 3
     Producto.objects.create(codProducto="3",
@@ -134,7 +134,7 @@ def poblar_bd(request):
                             imagen="images/Notebook/003/003.png",
                             precioProducto="209990", precioProductoCred="209990",
                             descFich="Asus chromebook C423NA-WB04 / Intel Celeron N3350 / Memoria RAM: 4 GB / Disco Duro: 64 GB / Sistema operativo: Chrome OS / Pantalla: '14 (1366x768)"  ,
-                            descFichCom="lala",
+                            descFichCom="Asus chromebook C423NA-WB04   /   Procesador Intel Celeron N3350 (2 núcleos / 2 hilos / 1100 MHz - 2400 MHz)   /   RAM 4 GB LPDDR4 (2400 MHz)   /   Pantalla LED 14.0' (1366x768) / 60 Hz   /   Batería 3 celdas (38000 mWh)   /   Tarjetas de video Intel HD Graphics 500 (Integrada)   /   Dimensiones 323 x 229 x 16 mm   /   Sistema Operativo Google Chrome OS",
                             categoria=Categoria.objects.get(idCategoria=2))
 #producto 4
     Producto.objects.create(codProducto="4",
@@ -143,7 +143,7 @@ def poblar_bd(request):
                             precioProducto="319900",
                             precioProductoCred="319900",
                             descFich="Intel core i7 de 11ma Generación / 8 núcleos / Frecuencia del procesador 2,5 GHz / 64 bits"  ,
-                            descFichCom="lala",
+                            descFichCom="Intel Core i7 de 11ma Generación   /   Número de núcleos de procesador: 8   /   Socket de procesador: LGA1200-V1   /   Fabricante de procesador: Intel   /    Frecuencia del procesador 2,5 GHz   /   Número de filamentos de procesador: 16    /   Modo de procesador operativo: 64 bits",
                             categoria=Categoria.objects.get(idCategoria=1))
     #producto 5
     Producto.objects.create(codProducto="5",
@@ -153,7 +153,7 @@ def poblar_bd(request):
                             precioProducto="59990"  ,
                             precioProductoCred="59990",
                             descFich="GSkill Trident Z / Memoria interna 8 GB / Velocidad de memoria 2400 MHz / Retroiluminación RGB"  ,
-                            descFichCom="lala",
+                            descFichCom="GSkill Trident Z   / Memoria interna 8GB   /   Tipo de memoria interna: DDR4   /   Velocidad de memoria del reloj: 2400 MHz   /   Intel® Extreme Memory Profile (XMP): Si   /   Voltaje de memoria: 1.35 V   /   Tipo de enfriamiento: Disipador térmico   /   Retroiluminación: Si   /   Color de luz de fondo: Rojo/Verde/Azul",
                             categoria=Categoria.objects.get(idCategoria=1))
     #producto 6
     Producto.objects.create(codProducto="6",
@@ -161,6 +161,6 @@ def poblar_bd(request):
                             imagen="images/Video/001/001.png",
                             precioProducto="289990", precioProductoCred="289990",
                             descFich="NVIDIA GTX 1660 / Resolución 7680 x 4320 pixeles / Capacidad gráfica 6 GB / Ancho de datos 192 bits / interfaz PCI Express x16 3.0"  ,
-                            descFichCom="lala",
+                            descFichCom="Familia de procesadores gráficos NVIDIA   /   Procesador gráfico GeForce GTX 1660   /   máxima resolucion 7680x4320   /   Máximas pantallas por tarjeta de video: 4   /   Capacidad de memoria gráfica: 6 GB   /   Tipo de interfaz:  PCI Express x16 3.0   /   velocidad de transferencia de datos 8 Gbit/s   /   Ancho de datos: 192 bits",
                             categoria=Categoria.objects.get(idCategoria=1))
     return redirect(producto, action='ins', id = '-1')
