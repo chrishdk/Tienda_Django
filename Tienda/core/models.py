@@ -21,8 +21,8 @@ class Producto(models.Model):
     imagen2 = models.ImageField(upload_to="images/",default="sinfoto.png", null=True, blank=False, verbose_name="Imagen producto2")
     precioProducto = models.IntegerField(null=False,blank=False, verbose_name="Precio Producto" )
     precioProductoCred = models.IntegerField(null=True, blank=False, verbose_name="Precio Producto" )
-    descFich = models.CharField(max_length=200, null=True, blank=False, verbose_name="descFich")
-    descFichCom = models.CharField(max_length=500, null=True, blank=False, verbose_name="descFichCom")
+    descFich = models.CharField(max_length=200, null=True, blank=False, verbose_name="Descripcion Ficha")
+    descFichCom = models.CharField(max_length=500, null=True, blank=False, verbose_name="Descripcion Ficha Completa")
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
 
     def __str__(self):
