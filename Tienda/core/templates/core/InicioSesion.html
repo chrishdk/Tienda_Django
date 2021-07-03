@@ -15,9 +15,9 @@
 {% block content %}
 
     <div class="container">
-        <h1 style="text-align: center !important;">
-            Ingresar al Sistema "Proyecto semestral"
-        </h1>
+        <h3 style="text-align: center !important;">
+            Ingresar al Sistema "Tienda"
+        </h3>
         <br><br>
         <div class="container">
             <div class="row justify-content-center">
@@ -34,6 +34,17 @@
                 </div>
             </div>
         </div>
+        <div class="form-group">
+            <div class="col-md-12 text-center"></div>
+    
+            <div class="d-flex justify-content-center links">
+              ¿No tiene una cuenta?
+              <a class="ml-2" href="{% url 'registro' %}">Regístrate</a>
+            </div>
+            <div class="d-flex justify-content-center links">
+              <a class="underlineHover" href="#">¿Olvidó su contraseña?</a>
+            </div>
+          </div>
     </div>
 
 {% endblock content %}
