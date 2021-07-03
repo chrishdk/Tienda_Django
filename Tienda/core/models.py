@@ -28,11 +28,11 @@ class Producto(models.Model):
     def __str__(self):
         return self.codProducto
 
-class Usuario(models.Model):
-    cuentaUsuario = models.CharField(max_length=20, primary_key=True,verbose_name="Cuenta")
-    passUsuario = models.CharField(max_length=15, blank=False, null=False, verbose_name="Password")
-    emailUsuario = models.CharField(max_length=50, blank=False, null=False, verbose_name="email")
-    nomUsuario = models.CharField(max_length=50, blank=False, null=False, verbose_name="Nombre")
-    celUsuario = models.CharField(max_length=50, blank=False, null=False, verbose_name="Celular")
+class Persona(models.Model):
+    cuenta = models.CharField(max_length=50, primary_key=True, verbose_name="Cuenta")
+    rut = models.CharField(max_length=80, blank=False, null=False, verbose_name="Rut")
+    nombre = models.CharField(max_length=80, blank=False, null=False, verbose_name="Nombre")
+    password = models.CharField(max_length=80, blank=False, null=False, verbose_name="Contraseña")
+
     def __str__(self):
-        return f"{self.emailUsuario} ({self.cuentaUsuario})"
+        return f"{self.nombre} ({self.cuenta})"

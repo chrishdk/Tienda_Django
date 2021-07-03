@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
-from core.models import Categoria, Usuario,  Producto
-from core.forms import  ValidarUsuarioForm , ProductoForm
+from core.models import Categoria, Persona,  Producto
+from core.forms import  ValidarPersonaForm , ProductoForm
 
 
 
@@ -50,22 +50,22 @@ def producto_ficha(request, id):
 
 # Validar Usuario
 
-def validar_persona(request):
-    data = {"mesg": "", "form": ValidarUsuarioForm, "persona": ""}
+def inicio_sesion(request):
+    data = {"mesg": "", "form": ValidarPersonaForm, "persona": ""}
 
     if request.method == "POST":
-        form = ValidarUsuarioForm(request.POST)
+        form = ValidarPersonaForm(request.POST)
         if form.is_valid:
             try:
-                cuentaUsuario = request.POST.get('cuentaUsuario')
-                passUsuario = request.POST.get('passUsuario')
-                objeto = Usuario.objects.get(cuentaUsuario=cuentaUsuario, passUsuario=passUsuario)
-                data["mesg"] = "¡La cuenta y la password son correctos!"
-                data["persona"] = Usuario.objects.get(cuentaUsuario=cuentaUsuario)
-                return render(request, "core/home.html", data)
+                cuenta = request.POST.get('cuenta')
+                password = request.POST.get('password')
+                objeto = Persona.objects.get(cuenta=cuenta, password=password)
+                print(objeto)
+                data["persona"] = Persona.objects.get(cuenta=cuenta)
+                return redirect(producto, action='ins', id = '-1')
             except:
                 data["mesg"] = "¡La cuenta o la password no son correctos!"
-    return render(request, "core/ValidarPersona.html", data)
+    return render(request, "core/InicioSesion.html", data)
 
 # Agregar producto
 
