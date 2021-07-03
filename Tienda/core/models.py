@@ -34,4 +34,5 @@ class Usuario(models.Model):
     emailUsuario = models.CharField(max_length=50, blank=False, null=False, verbose_name="email")
     nomUsuario = models.CharField(max_length=50, blank=False, null=False, verbose_name="Nombre")
     celUsuario = models.CharField(max_length=50, blank=False, null=False, verbose_name="Celular")
-    
+    def __str__(self):
+        return f"{self.emailUsuario} ({self.cuentaUsuario})"

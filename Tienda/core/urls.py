@@ -1,6 +1,6 @@
 from django.urls import path
 from django.urls.resolvers import URLPattern
-from .views import home,hardware, notebook, contacto, acercade, iniciosesion, registro, carrito, terminocondiciones, politicaprivacidad,poblar_bd,producto,producto_ficha,validar_persona
+from .views import home,hardware, notebook, contacto, acercade, iniciosesion, registro, carrito, terminocondiciones, politicaprivacidad,poblar_bd,producto,producto_ficha,validar_persona, inicio_sesion
 
 
 urlpatterns = [
@@ -18,4 +18,5 @@ urlpatterns = [
     path('producto/<action>/<id>', producto, name="producto"),
     path('producto_ficha/<id>', producto_ficha, name="producto_ficha"),
     path('validar_persona/', validar_persona, name="validar_persona"),
+    path ('Inicio_sesion/', inicio_sesion, name="inicio_sesion")
 ]
