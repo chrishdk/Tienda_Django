@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm, fields
-from .models import  Usuario, Producto
+from .models import  Persona, Producto
  
 class ProductoForm(ModelForm):
     class Meta:
@@ -15,7 +15,7 @@ class ProductoForm(ModelForm):
                     'categoria'
                 ]
 
-class ValidarUsuarioForm(ModelForm):
+class ValidarPersonaForm(ModelForm):
     class Meta:
-        model = Usuario
-        fields = ['cuentaUsuario', 'passUsuario']
+        model = Persona
+        fields = ['cuenta', 'password']
