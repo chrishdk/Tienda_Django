@@ -1,6 +1,8 @@
+from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
 from core.models import Categoria, Persona,  Producto
-from core.forms import  ValidarPersonaForm , ProductoForm
+from core.forms import  ValidarPersonaForm , ProductoForm, IniciarSesionForm
+from django.contrib.auth import login, logout, authenticate
 
 
 
@@ -51,21 +53,29 @@ def producto_ficha(request, id):
 # Validar Usuario
 
 def inicio_sesion(request):
-    data = {"mesg": "", "form": ValidarPersonaForm, "persona": ""}
+    data = {"mesg": "", "form": IniciarSesionForm()}   
 
     if request.method == "POST":
-        form = ValidarPersonaForm(request.POST)
+        form = IniciarSesionForm(request.POST)
         if form.is_valid:
-            try:
-                cuenta = request.POST.get('cuenta')
+            
+                username = request.POST.get('username')
                 password = request.POST.get('password')
-                objeto = Persona.objects.get(cuenta=cuenta, password=password)
-                print(objeto)
-                data["persona"] = Persona.objects.get(cuenta=cuenta)
-                return redirect(producto, action='ins', id = '-1')
-            except:
-                data["mesg"] = "¡La cuenta o la password no son correctos!"
+                user = authenticate(username=username, password=password)
+                if user is not None:
+                    if user.is_active:
+                        login(request, user)
+                        return redirect(home)
+                    else:
+                        data["mesg"] ="cuenta o password incorrectas"
+                else:
+                    data["mesg"]="cuenta o password incorrectos"
     return render(request, "core/InicioSesion.html", data)
+#cerrar seion
+def cerrar_sesion(request):
+    logout(request)
+    return redirect(home)
+
 
 # Agregar producto
 
