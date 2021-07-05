@@ -63,7 +63,7 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'acercade' %}">Acerca De</a>
                 </li>
-                
+                {% if not user.is_authenticated and not user.is_staff %}
                 <li class="nav-item">
                   <a
                     class="btn btn-outline-light my-2 my-sm-0"
@@ -72,6 +72,9 @@
                     >Regístrate</a
                   >
                 </li>
+                {%endif%}
+
+                {% if not user.is_authenticated %}
                 <li class="nav-item">
                   <a
                     class="btn btn-outline-light my-2 my-sm-0"
@@ -80,7 +83,33 @@
                     >Inicia Sesión</a
                   >
                 </li>
+                {% endif %}
+
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a
+                    class="btn btn-outline-light my-2 my-sm-0"
+                    href="{% url 'cerrar_sesion' %}"
+                    style="position: absolute; right: 120px"
+                    >Cerrar Sesion</a
+                  >
+                </li>
                 
+                {% endif %}
+               
+                {% if user.is_authenticated and user.is_staff %}
+                <li class="nav-item">
+                  <a
+                    class="btn btn-outline-light my-2 my-sm-0"
+                    href="{% url 'producto' 'ins' '-1' %}"
+                    style="position: absolute; right: 20px"
+                    >Productos </a
+                  >
+                </li>
+                {% endif %}
+
+
+
 
             
                 <li class="nav-item">

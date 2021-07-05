@@ -1,3 +1,4 @@
+from Tienda.core.forms import RegistroForm
 from django.http.response import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from rest_framework import status
@@ -70,5 +71,5 @@ def login (request):
        return Response("contraseña incorrecta")
     token, created = Token.objects.get_or_create(user=user)
     print(f"este es el token creado: '{token.key}'" )
-    return Response(token.key)                
+    return Response(token.key)
 

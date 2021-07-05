@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
 from core.models import Categoria, Persona,  Producto
-from core.forms import  ValidarPersonaForm , ProductoForm, IniciarSesionForm
+from core.forms import  ValidarPersonaForm , ProductoForm, IniciarSesionForm,RegistroForm
 from django.contrib.auth import login, logout, authenticate
 
 
@@ -114,6 +114,14 @@ def producto(request, action, id):
 
     data["list"] = Producto.objects.all().order_by('codProducto')
     return render(request, "core/Producto.html", data)
+
+#Registro
+#class registrar_usuario(CreateView):
+    model = User
+    template_name="core/registrar_usuario.html"
+    form_class= RegistroForm
+    success_url=Reverse_lazy("iniciarsesion")                
+
 
 
 def poblar_bd(request):
