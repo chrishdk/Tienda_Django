@@ -1,4 +1,4 @@
-from Tienda.core.forms import RegistroForm
+#from Tienda.core.forms import RegistroForm
 from django.http.response import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from rest_framework import status
@@ -32,9 +32,9 @@ class producto_update(APIView):
             serializer.update()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-##@csrf_exempt
+@csrf_exempt
 @api_view(['GET'])
-##@permission_classes((IsAuthenticated),)
+@permission_classes((IsAuthenticated),)
 def producto_read(request, id):
     if request.method == 'GET':
         objeto = get_object_or_404(Producto, codProducto=id)

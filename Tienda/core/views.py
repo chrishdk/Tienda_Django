@@ -1,8 +1,11 @@
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
+from django.views.decorators.csrf import csrf_exempt
 from core.models import Categoria, Persona,  Producto
 from core.forms import  ValidarPersonaForm , ProductoForm, IniciarSesionForm,RegistroForm
 from django.contrib.auth import login, logout, authenticate
+from django.views.generic import CreateView 
+from django.urls import reverse_lazy
 
 
 
@@ -78,8 +81,10 @@ def cerrar_sesion(request):
 
 
 # Agregar producto
-
+@csrf_exempt
 def producto(request, action, id):
+    if not(request.user.is_authenticated and request.user.is_staff):
+        return redirect(home)    
     data = {"mesg": "", "form": ProductoForm, "action": action, "id": id}
  
     if action == 'ins':
@@ -116,11 +121,11 @@ def producto(request, action, id):
     return render(request, "core/Producto.html", data)
 
 #Registro
-#class registrar_usuario(CreateView):
+class registrar_usuario(CreateView):
     model = User
     template_name="core/registrar_usuario.html"
     form_class= RegistroForm
-    success_url=Reverse_lazy("iniciarsesion")                
+    success_url=reverse_lazy("iniciarsesion")                
 
 
 
