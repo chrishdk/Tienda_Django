@@ -9,7 +9,7 @@ urlpatterns = [
     path('Notebook', notebook, name="notebook"),
     path('Contacto', contacto, name="contacto"),
     path('AcercaDe', acercade, name="acercade"),
-    path('Registro', registro, name="registro"),
+   
     path('Carrito', carrito, name="carrito"),
     path('TerminoCondiciones', terminocondiciones, name="terminocondiciones"),
     path('PoliticaPrivacidad', politicaprivacidad, name="politicaprivacidad"),
@@ -17,6 +17,6 @@ urlpatterns = [
     path('producto/<action>/<id>', producto, name="producto"),
     path('producto_ficha/<id>', producto_ficha, name="producto_ficha"),
     path ('Inicio_sesion/', inicio_sesion, name="inicio_sesion"),
-    path ('Cerrar_sesion/', cerrar_sesion, name="cerrar_sesion")
-    #path('Registrar_usuario/', registrar_usuario.as_view(), name=registrar_usuario)
+    path ('Cerrar_sesion/', cerrar_sesion, name="cerrar_sesion"),
+    path('Registro/', registro.as_view(), name="registro")
 ]

@@ -121,9 +121,9 @@ def producto(request, action, id):
     return render(request, "core/Producto.html", data)
 
 #Registro
-class registrar_usuario(CreateView):
+class registro(CreateView):
     model = User
-    template_name="core/registrar_usuario.html"
+    template_name="core/Registro.html"
     form_class= RegistroForm
     success_url=reverse_lazy("iniciarsesion")                
 
