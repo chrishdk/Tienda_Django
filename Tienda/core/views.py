@@ -5,7 +5,7 @@ from core.models import Categoria, Persona,  Producto
 from core.forms import  ValidarPersonaForm , ProductoForm, IniciarSesionForm,RegistroForm
 from django.contrib.auth import login, logout, authenticate
 from django.views.generic import CreateView 
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 
 
 
@@ -125,7 +125,7 @@ class registro(CreateView):
     model = User
     template_name="core/Registro.html"
     form_class= RegistroForm
-    success_url=reverse_lazy("iniciarsesion")                
+    success_url= reverse_lazy("home")                
 
 
 
