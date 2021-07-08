@@ -13,19 +13,20 @@
 {% endblock %}
 
 {% block content %}
-
+<br><br>
     <div class="container">
         <h3 style="text-align: center !important;">
             Ingresar al Sistema "Tienda"
         </h3>
         <br><br>
         <div class="container">
-            <div class="row justify-content-left">
+            <div class="row justify-content-center">
                 
                     <form method="POST" action="" enctype="multipart/form-data" id="formulario">
-                        <div style="text-align: left;">
+                        <div style="text-align: center;">
                             {% csrf_token %} {{ form.as_p }}
                             <div style="text-align: center;"></div>
+                            <br><br>
                              <input type="submit" class="btn btn-primary btnwidth"  i   id="id_guardar" value="Ingresar">
                             
                             {% if mesg %}
@@ -48,6 +49,8 @@
             </div>
           </div>
     </div>
+    <br><br>
+    <br><br>
 
 {% endblock content %}
 
