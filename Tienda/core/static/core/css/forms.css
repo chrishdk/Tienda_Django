@@ -84,3 +84,12 @@
 .ficha_datos_recuadro {
     padding:10px;
 }
+
+.input{
+    width: 150px;
+
+}
+.label{
+width: 100px;
+text-align: left;
+}

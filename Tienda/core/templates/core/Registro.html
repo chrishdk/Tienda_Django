@@ -13,9 +13,23 @@
 {% endblock %}
 
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p}}
-    <button type="submit">Crear usuario</button>
-</form>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <h1 class="my-4"  style="text-align: center !important;">Registrarse</h1>
+    </div>
+  </div>
+</div>
+  
+<div class="row justify-content-center">   
+   
+      <form method=" post"></form>
+       <div style="text-align: left;">
+         {% csrf_token %}{{ form.as_p}}
+    
+           <button type="submit" class="btn btn-primary btnwidth" style="text-align: center" >Crear usuario</button>
+        </div>
+      </form>
+   
+</div> 
 {% endblock content %}
